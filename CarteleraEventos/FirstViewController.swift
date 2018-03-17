@@ -33,33 +33,15 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     @IBOutlet weak var eventosTableView: UITableView!
-    var arrEveStr = [evenStruct]()
     var arrEventos = [Evento]()
     var indSelected = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let jsonUrlString = "https://cartelera-api.herokuapp.com/events/"
-        guard let url = URL(string: jsonUrlString) else
-        { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else {return}
-            //let dataAsString = String(data: data, encoding: .utf8)
-            //print(dataAsString as Any)
-            do{
-                let jsonTodosEventos = try JSONDecoder().decode([evenStruct].self, from: data)
-                self.arrEveStr = jsonTodosEventos
-                for eve in self.arrEveStr
-                {
-                    let eventoTemp = Evento(ide: String(describing: eve.id), fotoURL: eve.photo, name: eve.name!, startDate: eve.startDate, startTime: eve.startTime, location: eve.location)
-                    self.arrEventos.append(eventoTemp)
-                }
-                self.eventosTableView.reloadData()
-            } catch let jsonErr{
-                print("Error serializando json:", jsonErr)
-            }
-            }.resume()
+        APIManager.sharedInstance.getEvents { (arrEventos) in
+            self.arrEventos = arrEventos
+            self.eventosTableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
