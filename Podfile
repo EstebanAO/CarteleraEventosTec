@@ -9,8 +9,12 @@ target 'CarteleraEventos' do
 
   use_frameworks!
 
-  pod 'FacebookCore'
-  pod 'FacebookLogin'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKShareKit'
+  pod 'FBSDKLoginKit'
   pod 'FacebookShare'
+
+  pod 'Alamofire', '~> 4.7'
+  pod 'AlamofireImage'
 
 end

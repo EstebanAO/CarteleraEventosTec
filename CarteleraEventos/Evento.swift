@@ -22,9 +22,13 @@ class Evento{
     {
         self.id = Int(ide)!
         
-        let url = URL(string: fotoURL!)
-        let imgData = try? Data(contentsOf: url!)
-        self.foto = UIImage(data: imgData!)!
+            let url = URL(string: fotoURL!)
+            let imgData = try? Data(contentsOf: url!)
+        if(imgData != nil)
+        {
+            self.foto = UIImage(data: imgData!)!
+        }
+        
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/mm/yyyy"

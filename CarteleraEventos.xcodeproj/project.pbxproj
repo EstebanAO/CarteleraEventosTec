@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3301A0AEFD85FF9978E93513 /* Pods_CarteleraEventos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557CA525B857861E271DB008 /* Pods_CarteleraEventos.framework */; };
 		55004D6F2059FDA60087BF70 /* DetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55004D6E2059FDA60087BF70 /* DetalleViewController.swift */; };
 		5525AAC420584882001E3E1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525AAC320584882001E3E1C /* AppDelegate.swift */; };
 		5525AAC620584882001E3E1C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525AAC520584882001E3E1C /* FirstViewController.swift */; };
@@ -17,9 +18,7 @@
 		5525AADA20584C16001E3E1C /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525AAD920584C16001E3E1C /* Evento.swift */; };
 		5525AADC20585590001E3E1C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525AADB20585590001E3E1C /* CustomTableViewCell.swift */; };
 		5564A80F205DC7F3005480E7 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5564A80E205DC7F3005480E7 /* APIManager.swift */; };
-		5564A829205DC8F2005480E7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564A81C205DC8E3005480E7 /* Alamofire.framework */; };
 		5564A82A205DC8F2005480E7 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5564A81C205DC8E3005480E7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5564A82E205DC8FA005480E7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564A820205DC8E3005480E7 /* Alamofire.framework */; };
 		5564A82F205DC8FA005480E7 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5564A820205DC8E3005480E7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -118,6 +117,10 @@
 		5525AADB20585590001E3E1C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		5564A80E205DC7F3005480E7 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		5564A810205DC8E3005480E7 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		5564A845205DE64D005480E7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		557CA525B857861E271DB008 /* Pods_CarteleraEventos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarteleraEventos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5BA5A66F4958C648EC5F6EA /* Pods-CarteleraEventos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarteleraEventos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarteleraEventos/Pods-CarteleraEventos.debug.xcconfig"; sourceTree = "<group>"; };
+		CF902FEF8F66FA10698D89E8 /* Pods-CarteleraEventos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarteleraEventos.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarteleraEventos/Pods-CarteleraEventos.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5564A829205DC8F2005480E7 /* Alamofire.framework in Frameworks */,
-				5564A82E205DC8FA005480E7 /* Alamofire.framework in Frameworks */,
+				3301A0AEFD85FF9978E93513 /* Pods_CarteleraEventos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +141,8 @@
 				5525AAC220584882001E3E1C /* CarteleraEventos */,
 				5525AAC120584882001E3E1C /* Products */,
 				5564A810205DC8E3005480E7 /* Alamofire.xcodeproj */,
+				92A25A0F71647E037AFF7DD3 /* Pods */,
+				E8A5588255E51023D628B0BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,6 +186,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		92A25A0F71647E037AFF7DD3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C5BA5A66F4958C648EC5F6EA /* Pods-CarteleraEventos.debug.xcconfig */,
+				CF902FEF8F66FA10698D89E8 /* Pods-CarteleraEventos.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E8A5588255E51023D628B0BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5564A845205DE64D005480E7 /* FBSDKShareKit.framework */,
+				557CA525B857861E271DB008 /* Pods_CarteleraEventos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,10 +211,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5525AAD420584883001E3E1C /* Build configuration list for PBXNativeTarget "CarteleraEventos" */;
 			buildPhases = (
+				85C05ACC1121B95D8E8A233F /* [CP] Check Pods Manifest.lock */,
 				5525AABC20584882001E3E1C /* Sources */,
 				5525AABD20584882001E3E1C /* Frameworks */,
 				5525AABE20584882001E3E1C /* Resources */,
 				5564A82D205DC8F2005480E7 /* Embed Frameworks */,
+				D500B593D19DA0493E7C5CFF /* [CP] Embed Pods Frameworks */,
+				A53B02101DBC9C77DDF26E19 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,6 +336,74 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		85C05ACC1121B95D8E8A233F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarteleraEventos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A53B02101DBC9C77DDF26E19 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarteleraEventos/Pods-CarteleraEventos-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D500B593D19DA0493E7C5CFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CarteleraEventos/Pods-CarteleraEventos-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarteleraEventos/Pods-CarteleraEventos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5525AABC20584882001E3E1C /* Sources */ = {
@@ -467,10 +560,15 @@
 		};
 		5525AAD520584883001E3E1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5BA5A66F4958C648EC5F6EA /* Pods-CarteleraEventos.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 34E55V7PHJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CarteleraEventos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ESCAMA.CarteleraEventos;
@@ -482,10 +580,15 @@
 		};
 		5525AAD620584883001E3E1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF902FEF8F66FA10698D89E8 /* Pods-CarteleraEventos.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 34E55V7PHJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CarteleraEventos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ESCAMA.CarteleraEventos;

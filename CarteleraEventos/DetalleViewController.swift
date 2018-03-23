@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import FacebookShare
 
 protocol protocoloModificarFavorito{
     func modificaFavorito(fav: Bool  )
 }
 
 class DetalleViewController: UIViewController {
+    
     var eveTemp : Evento!
     var eveName : String!
     var delegado : protocoloModificarFavorito!
@@ -64,8 +66,29 @@ class DetalleViewController: UIViewController {
         delegado.modificaFavorito( fav: eveTemp.favorites )
         
     }
+    
+    @IBAction func shareFacebook(_ sender: Any) {
+        var hola = UIApplication.shared.canOpenURL(URL(string: "fbauth2://")!)
+        if hola
+        {
+            let shareEvent = ShareDialog(content: PhotoShareContent(photos: [Photo(image: eveTemp.foto!, userGenerated: true)]))
+            shareEvent.mode = .native
+            shareEvent.failsOnInvalidData = true
+            shareEvent.completion = { result in
+                
+            }
+            do {
+                try shareEvent.show()
+            } catch {
+                print("Error displaying share dialog")
+            }
+        }
+        else{
+            let alertController = UIAlertController(title: "Facebook no instalado", message:
+                "No se ha podido compartir el evento porque la aplicación de fácebook no está instalada.", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
 }
-
-
-
-

@@ -8,23 +8,6 @@
 
 import UIKit
 
-struct evenStruct : Decodable{
-    var id : Int
-    var photo : String?
-    var name : String?
-    var startDate : String
-    var startTime : String
-    var location : String?
-    init(json: [String: Any]){
-        id = json["\"id\""] as? Int ?? -1
-        photo = json["\"photo\""] as? String ?? ""
-        name = json["\"name\""] as? String ?? ""
-        startDate = json["\"startDate\""] as? String ?? ""
-        startTime = json["\"startTime\""] as? String ?? ""
-        location = json["\"location\""] as? String ?? ""
-    }
-}
-
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, protocoloModificarFavorito {
     
     func modificaFavorito(fav: Bool) {

@@ -15,12 +15,12 @@ class APIManager{
     
     let jsonUrlString = "https://cartelera-api.herokuapp.com/events/"
     
-    
     func getEvents(completion: @escaping ([Evento]) -> Void) {
         var arrEventos = [Evento]()
         
         Alamofire.request(jsonUrlString).validate().responseJSON { (response) in
             if let arrEveJson = response.value as? [[String : Any]] {
+                print(arrEveJson)
                 for eve in arrEveJson
                 {
                     let eventoTemp = Evento(ide: String(eve["id"] as! Int),
@@ -31,6 +31,7 @@ class APIManager{
                                             location: eve["location"] as? String)
                     arrEventos.append(eventoTemp)
                 }
+                
                 completion(arrEventos)
             }
         }
