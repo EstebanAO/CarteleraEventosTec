@@ -1,19 +1,25 @@
 //
-//  FirstViewController.swift
-//  CarteleraEventos
+//  EventoFavoritoViewController.swift
+//  
 //
-//  Created by Esteban Arocha Ortuño on 3/13/18.
-//  Copyright © 2018 ESCAMA. All rights reserved.
+//  Created by Esteban Arocha Ortuño on 4/6/18.
 //
 
 import UIKit
 import CoreData
 
-struct GlobalVar {
-    static var arrEventsGlobal = [Evento]()
-}
-
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, protocoloModificarFavorito {
+class EventoFavoritoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, protocoloModificarFavorito {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        arrEventos = GlobalVar.arrEventsGlobal
+        buscaFavoritos()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     func modificaFavorito(fav: Bool, ide: Int) {
         
@@ -55,63 +61,82 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    var arrIndFav = [Int]()
+    func buscaFavoritos()
+    {
+        arrIndFav.removeAll()
+        arrEventosFav.removeAll()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<EventosFavoritos>(entityName: "EvenFavoritos")
+        
+        let predicado = NSPredicate(format: "(ident > 0)")
+        fetchRequest.predicate = predicado
+        
+        var resultados : [EventosFavoritos]!
+        
+        do {
+            resultados = try managedContext.fetch(fetchRequest)
+            for res in resultados
+            {
+                arrIndFav.append(Int(res.ident))
+            }
+        } catch let error as NSError {
+            print ("Error al leer \(error) \(error.userInfo)")
+        }
+        
+    }
     
     @IBOutlet weak var eventosTableView: UITableView!
-    
     var arrEventos = [Evento]()
     var indSelected = 0
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        APIManager.sharedInstance.getEvents { (arrEventos) in
-            self.arrEventos = arrEventos
-            GlobalVar.arrEventsGlobal = arrEventos
-            self.eventosTableView.reloadData()
-        }
-        self.arrEventos = GlobalVar.arrEventsGlobal
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
+    var arrEventosFav = [Evento]()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return arrEventos.count
+        for fav in arrEventos
+        {
+            if (arrIndFav.contains(fav.id))
+            {
+                arrEventosFav.append(fav)
+            }
+        }
+        return arrEventosFav.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as! CustomTableViewCell
         
-        cell.location.text = arrEventos[indexPath.row].location
-        cell.name.text = arrEventos[indexPath.row].name
+        cell.location.text = arrEventosFav[indexPath.row].location
+        cell.name.text = arrEventosFav[indexPath.row].name
         //cell.startDate.text = String(describing: arrEventos[indexPath.row].startDate)
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         dateFormatter.locale = Locale(identifier: "es_MX")
-        cell.startDate.text = dateFormatter.string(from: arrEventos[indexPath.row].startDate)
+        cell.startDate.text = dateFormatter.string(from: arrEventosFav[indexPath.row].startDate)
         //cell.startTime.text = String(describing: arrEventos[indexPath.row].startTime)
-        cell.startTime.text = arrEventos[indexPath.row].startTime
-        cell.foto.image = arrEventos[indexPath.row].foto
-    
+        cell.startTime.text = arrEventosFav[indexPath.row].startTime
+        cell.foto.image = arrEventosFav[indexPath.row].foto
+        
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "mostrar")
         {
-            let vistaDetalle = segue.destination as! DetalleViewController
+            let vistaDetalle = segue.destination as! FavDetalleViewController
             let indexPath = eventosTableView.indexPathForSelectedRow!
             //vistaDetalle.eveTemp.foto = arrEventos[indexPath.row].foto
-            vistaDetalle.eveTemp = arrEventos[indexPath.row]
+            vistaDetalle.eveTemp = arrEventosFav[indexPath.row]
             eventosTableView.deselectRow(at: indexPath, animated: true)
             vistaDetalle.delegado = self
             indSelected = indexPath.row
@@ -119,19 +144,17 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @IBAction func unwindDetalle(for segue: UIStoryboardSegue, sender: Any?){
+        buscaFavoritos()
+        eventosTableView.reloadData()
         GlobalVar.arrEventsGlobal = arrEventos
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        arrEventos = GlobalVar.arrEventsGlobal
+        buscaFavoritos()
+        eventosTableView.reloadData()
+    }
+    
 }
-
-
-
-
-
-
-
-
-
-
-
 

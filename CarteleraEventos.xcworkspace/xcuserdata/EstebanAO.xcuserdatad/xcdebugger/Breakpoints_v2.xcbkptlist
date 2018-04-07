@@ -9,62 +9,46 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CarteleraEventos/DetalleViewController.swift"
-            timestampString = "543520681.308104"
+            filePath = "CarteleraEventos/FirstViewController.swift"
+            timestampString = "544752725.521181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "shareFacebook(_:)"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "modificaFavorito(fav:ide:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarteleraEventos/FirstViewController.swift"
-            timestampString = "543521679.020376"
+            timestampString = "544752725.521367"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "modificaFavorito(fav:ide:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CarteleraEventos/FirstViewController.swift"
+            timestampString = "544752725.521477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "viewDidLoad()"
+            landmarkName = "modificaFavorito(fav:ide:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CarteleraEventos.FirstViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "CarteleraEventos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/EstebanAO/Google%20Drive/Escuela/ITC/Sexto%20semestre/MobilesIOS/CarteleraEventos/CarteleraEventos/FirstViewController.swift"
-                  timestampString = "543521276.027724"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "92">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;CarteleraEventos.Evento&gt;) -&gt; () in CarteleraEventos.FirstViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "CarteleraEventos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/EstebanAO/Google%20Drive/Escuela/ITC/Sexto%20semestre/MobilesIOS/CarteleraEventos/CarteleraEventos/FirstViewController.swift"
-                  timestampString = "543521276.030019"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

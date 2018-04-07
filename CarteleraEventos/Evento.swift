@@ -29,7 +29,6 @@ class Evento{
             self.foto = UIImage(data: imgData!)!
         }
         
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/mm/yyyy"
         //dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
