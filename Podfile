@@ -17,4 +17,7 @@ target 'CarteleraEventos' do
   pod 'Alamofire', '~> 4.7'
   pod 'AlamofireImage'
 
+  pod 'GoogleAPIClientForREST/Calendar', '~> 1.2.1'
+  pod 'GoogleSignIn', '~> 4.1.1'
+
 end

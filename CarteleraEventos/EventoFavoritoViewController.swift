@@ -12,8 +12,15 @@ class EventoFavoritoViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrEventos = GlobalVar.arrEventsGlobal
         buscaFavoritos()
+        for eve in GlobalVar.arrEventsGlobal
+        {
+            if (arrIndFav.contains(eve.id))
+            {
+                eve.favorites = true
+            }
+        }
+        arrEventos = GlobalVar.arrEventsGlobal
     }
     
     override func didReceiveMemoryWarning() {

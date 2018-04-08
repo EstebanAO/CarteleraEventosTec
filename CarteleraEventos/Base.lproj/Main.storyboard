@@ -202,6 +202,14 @@
                                     <action selector="shareFacebook:" destination="1pW-dP-Nic" eventType="touchUpInside" id="GBc-3I-XEM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bor-U2-Pbx">
+                                <rect key="frame" x="194" y="301" width="106" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Guardar evento"/>
+                                <connections>
+                                    <action selector="guardarEventoIOS:" destination="1pW-dP-Nic" eventType="touchUpInside" id="v21-48-Dth"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.16078431372549018" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>

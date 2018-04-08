@@ -8,6 +8,7 @@
 
 import UIKit
 import FacebookShare
+import EventKit
 
 protocol protocoloModificarFavorito{
     func modificaFavorito(fav: Bool, ide: Int )
@@ -100,5 +101,64 @@ class DetalleViewController: UIViewController {
         }
     }
     
+    @IBAction func guardarEventoIOS(_ sender: Any) {
+        let calendar = Calendar.current
+        
+        
+        //addEventToCalendar(title: eveTemp.name!, description: "Evento Cool", startDate: eveTemp.startDate, endDate: endDate!)
+        
+        let eventStore = EKEventStore()
+        
+        eventStore.requestAccess(to: .event, completion: { (granted, error) in
+            if (granted) && (error == nil) {
+                let stDate = self.eveTemp.startDate
+                let endDate = calendar.date(byAdding: .minute, value: 60, to: stDate)
+                let event = EKEvent(eventStore: eventStore)
+                event.title = self.eveTemp.name
+                event.startDate = self.eveTemp.startDate
+                event.endDate = endDate
+                event.notes = "Evento Cool"
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                } catch let error as NSError {
+                    print("error : \(error)")
+                    return
+                }
+                let alertController = UIAlertController(title: "¡Evento Agendado!", message:
+                    "El evento ha sido guardado en el calendario de tu iPhone.", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
+                
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                print("error : \(String(describing: error))")
+            }
+        })
+        
+    }
+    
+    func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
+        let eventStore = EKEventStore()
+        
+        eventStore.requestAccess(to: .event, completion: { (granted, error) in
+            if (granted) && (error == nil) {
+                let event = EKEvent(eventStore: eventStore)
+                event.title = title
+                event.startDate = startDate
+                event.endDate = endDate
+                event.notes = description
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                } catch let e as NSError {
+                    completion?(false, e)
+                    return
+                }
+                completion?(true, nil)
+            } else {
+                completion?(false, error as NSError?)
+            }
+        })
+    }
     
 }

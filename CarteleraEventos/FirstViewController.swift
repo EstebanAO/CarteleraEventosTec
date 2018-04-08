@@ -50,7 +50,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         do {
             try managedContext.save()
         } catch let error as NSError {
-            print("El fav no fue guardado")
             print("Error \(error) \(error.userInfo)")
         }
     }
@@ -59,6 +58,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var eventosTableView: UITableView!
     
     var arrEventos = [Evento]()
+    var arrIndFav = [Int]()
     var indSelected = 0
     
     override func viewDidLoad() {
@@ -70,6 +70,17 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.eventosTableView.reloadData()
         }
         self.arrEventos = GlobalVar.arrEventsGlobal
+        
+        // Agrega el estatus de favorito a los eventos
+        buscaFavoritos()
+        for eve in GlobalVar.arrEventsGlobal
+        {
+            if (arrIndFav.contains(eve.id))
+            {
+                eve.favorites = true
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,6 +131,31 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func unwindDetalle(for segue: UIStoryboardSegue, sender: Any?){
         GlobalVar.arrEventsGlobal = arrEventos
+    }
+    
+    func buscaFavoritos()
+    {
+        arrIndFav.removeAll()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<EventosFavoritos>(entityName: "EvenFavoritos")
+        
+        let predicado = NSPredicate(format: "(ident > 0)")
+        fetchRequest.predicate = predicado
+        
+        var resultados : [EventosFavoritos]!
+        
+        do {
+            resultados = try managedContext.fetch(fetchRequest)
+            for res in resultados
+            {
+                arrIndFav.append(Int(res.ident))
+            }
+        } catch let error as NSError {
+            print ("Error al leer \(error) \(error.userInfo)")
+        }
+        
     }
     
 }
