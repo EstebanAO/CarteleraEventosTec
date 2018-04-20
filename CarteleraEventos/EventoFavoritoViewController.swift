@@ -124,13 +124,11 @@ class EventoFavoritoViewController: UIViewController, UITableViewDelegate, UITab
         
         cell.location.text = arrEventosFav[indexPath.row].location
         cell.name.text = arrEventosFav[indexPath.row].name
-        //cell.startDate.text = String(describing: arrEventos[indexPath.row].startDate)
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         dateFormatter.locale = Locale(identifier: "es_MX")
         cell.startDate.text = dateFormatter.string(from: arrEventosFav[indexPath.row].startDate)
-        //cell.startTime.text = String(describing: arrEventos[indexPath.row].startTime)
         cell.startTime.text = arrEventosFav[indexPath.row].startTime
         cell.foto.image = arrEventosFav[indexPath.row].foto
         
@@ -142,7 +140,6 @@ class EventoFavoritoViewController: UIViewController, UITableViewDelegate, UITab
         {
             let vistaDetalle = segue.destination as! FavDetalleViewController
             let indexPath = eventosTableView.indexPathForSelectedRow!
-            //vistaDetalle.eveTemp.foto = arrEventos[indexPath.row].foto
             vistaDetalle.eveTemp = arrEventosFav[indexPath.row]
             eventosTableView.deselectRow(at: indexPath, animated: true)
             vistaDetalle.delegado = self

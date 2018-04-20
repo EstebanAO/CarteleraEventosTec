@@ -187,27 +187,28 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fav" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgW-B3-kZ4">
-                                <rect key="frame" x="111" y="527" width="186" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQf-p6-QV9">
-                                <rect key="frame" x="28" y="301" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Share FB"/>
-                                <connections>
-                                    <action selector="shareFacebook:" destination="1pW-dP-Nic" eventType="touchUpInside" id="GBc-3I-XEM"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bor-U2-Pbx">
-                                <rect key="frame" x="194" y="301" width="106" height="30"/>
+                                <rect key="frame" x="9" y="369" width="106" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Guardar evento"/>
                                 <connections>
                                     <action selector="guardarEventoIOS:" destination="1pW-dP-Nic" eventType="touchUpInside" id="v21-48-Dth"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UF2-oh-z4s">
+                                <rect key="frame" x="188" y="369" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Guardar Google"/>
+                                <connections>
+                                    <action selector="guardarGoogle:" destination="1pW-dP-Nic" eventType="touchUpInside" id="5eY-0l-jlE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVl-k7-pQb">
+                                <rect key="frame" x="29" y="259" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareNative:" destination="1pW-dP-Nic" eventType="touchUpInside" id="Ifk-Q5-sAf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -219,7 +220,6 @@
                         <outlet property="lbHora" destination="4qW-ov-xhN" id="cgr-ya-hCd"/>
                         <outlet property="lbLugar" destination="90k-c2-hRM" id="Cl1-Nb-f9K"/>
                         <outlet property="lbName" destination="7o3-Nx-52R" id="JQA-nq-h1v"/>
-                        <outlet property="pruebafav" destination="RgW-B3-kZ4" id="GSH-gI-xpM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lj7-NR-zGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -424,19 +424,30 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fav" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gD0-MT-V16">
-                                <rect key="frame" x="111" y="527" width="186" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggw-En-Ep2">
+                                <rect key="frame" x="16" y="369" width="106" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODm-7j-V2z">
-                                <rect key="frame" x="28" y="301" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Share FB"/>
+                                <state key="normal" title="Guardar evento"/>
                                 <connections>
-                                    <action selector="shareFacebook:" destination="yrR-rx-C2E" eventType="touchUpInside" id="lJA-GT-b40"/>
+                                    <action selector="guardarEventoIOS:" destination="1pW-dP-Nic" eventType="touchUpInside" id="PXK-nJ-ebJ"/>
+                                    <action selector="guardarEventoIOS:" destination="yrR-rx-C2E" eventType="touchUpInside" id="UuK-wH-nmB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0i-1O-Q37">
+                                <rect key="frame" x="195" y="369" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Guardar Google"/>
+                                <connections>
+                                    <action selector="guardarGoogle:" destination="yrR-rx-C2E" eventType="touchUpInside" id="XDE-dQ-Mx7"/>
+                                    <action selector="guardarGoogle:" destination="1pW-dP-Nic" eventType="touchUpInside" id="qeC-g4-PAa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTu-rB-vV7">
+                                <rect key="frame" x="26" y="259" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareNative:" destination="yrR-rx-C2E" eventType="touchUpInside" id="5f5-rn-CjD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -448,7 +459,6 @@
                         <outlet property="lbHora" destination="zYh-d4-m0f" id="40a-PL-zqU"/>
                         <outlet property="lbLugar" destination="Bg5-gx-aI1" id="OGA-tm-95i"/>
                         <outlet property="lbName" destination="0ms-MS-2aD" id="bX0-jj-xm9"/>
-                        <outlet property="pruebafav" destination="gD0-MT-V16" id="aDj-og-fAN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXO-ma-0RM" userLabel="First Responder" sceneMemberID="firstResponder"/>

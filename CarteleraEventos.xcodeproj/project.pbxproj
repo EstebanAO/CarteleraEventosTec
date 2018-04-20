@@ -16,6 +16,7 @@
 		5525AAD020584883001E3E1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5525AACE20584883001E3E1C /* LaunchScreen.storyboard */; };
 		5525AADA20584C16001E3E1C /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525AAD920584C16001E3E1C /* Evento.swift */; };
 		5525AADC20585590001E3E1C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525AADB20585590001E3E1C /* CustomTableViewCell.swift */; };
+		556118A0207ACB52001AC6CE /* GoogleAPIClientForREST.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 556118A1207ACB52001AC6CE /* GoogleAPIClientForREST.framework */; };
 		5564A80F205DC7F3005480E7 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5564A80E205DC7F3005480E7 /* APIManager.swift */; };
 		5564A82A205DC8F2005480E7 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5564A81C205DC8E3005480E7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55AB6EAD20780CCD00DB4199 /* eventosFavoritos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6EAB20780CCD00DB4199 /* eventosFavoritos.xcdatamodeld */; };
@@ -109,6 +110,7 @@
 		5525AAD120584883001E3E1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5525AAD920584C16001E3E1C /* Evento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
 		5525AADB20585590001E3E1C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		556118A1207ACB52001AC6CE /* GoogleAPIClientForREST.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleAPIClientForREST.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5564A80E205DC7F3005480E7 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		5564A810205DC8E3005480E7 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		5564A845205DE64D005480E7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				556118A0207ACB52001AC6CE /* GoogleAPIClientForREST.framework in Frameworks */,
 				3301A0AEFD85FF9978E93513 /* Pods_CarteleraEventos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +204,7 @@
 		E8A5588255E51023D628B0BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				556118A1207ACB52001AC6CE /* GoogleAPIClientForREST.framework */,
 				5564A845205DE64D005480E7 /* FBSDKShareKit.framework */,
 				557CA525B857861E271DB008 /* Pods_CarteleraEventos.framework */,
 			);
@@ -364,9 +368,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CarteleraEventos/Pods-CarteleraEventos-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -388,6 +395,10 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -399,6 +410,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -26,9 +26,26 @@ class APIManager{
                     let eventoTemp = Evento(ide: String(eve["id"] as! Int),
                                             fotoURL: eve["photo"] as? String,
                                             name: eve["name"] as? String,
-                                            startDate: eve["startDate"] as? String,
-                                            startTime: eve["startTime"] as! String,
-                                            location: eve["location"] as? String)
+                                            startDate: eve["startDatetime"] as? String,
+                                            location: eve["location"] as? String,
+                                            contactEmail: eve["contactEmail"] as? String,
+                                            description: eve["description"] as? String,
+                                            requirements: eve["requirementsToRegister"] as? String,
+                                            schedule: eve["schedule"] as? String,
+                                            petFriendly: eve["petFriendly"] as? String,
+                                            contactPhone: eve["contactPhone"] as? String,
+                                            category: eve["category"] as? String,
+                                            contactName: eve["contactName"] as? String,
+                                            cost: eve["cost"] as? String,
+                                            hasRegistration: eve["hasRegistration"] as? String,
+                                            cancelled: eve["cancelled"] as? String,
+                                            hasDeadline: eve["hasDeadline"] as? String,
+                                            prefix: eve["prefix"] as? String,
+                                            registrationDeadline: eve["registrationDeadline"] as? String,
+                                            registrationUrl: eve["registrationUrl"] as? String,
+                                            cancelMessage: eve["cancelMessage"] as? String,
+                                            campus: eve["campus"] as? String,
+                                            registrationMessage: eve["registrationMessage"] as? String)
                     arrEventos.append(eventoTemp)
                 }
                 
