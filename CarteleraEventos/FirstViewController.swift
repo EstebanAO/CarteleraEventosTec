@@ -14,7 +14,6 @@ struct GlobalVar {
 }
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, protocoloModificarFavorito {
-    
     func modificaFavorito(fav: Bool, ide: Int) {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -88,6 +87,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -100,9 +100,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as! CustomTableViewCell
-        
-        cell.location.text = arrEventos[indexPath.row].location
+       
         cell.name.text = arrEventos[indexPath.row].name
+        cell.name.lineBreakMode = NSLineBreakMode.byWordWrapping
+        cell.name.numberOfLines = 0
         //cell.startDate.text = String(describing: arrEventos[indexPath.row].startDate)
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -112,7 +113,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //cell.startTime.text = String(describing: arrEventos[indexPath.row].startTime)
         cell.startTime.text = arrEventos[indexPath.row].startTime
         cell.foto.image = arrEventos[indexPath.row].foto
-    
+        
         return cell
     }
     

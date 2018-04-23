@@ -122,8 +122,9 @@ class EventoFavoritoViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as! CustomTableViewCell
         
-        cell.location.text = arrEventosFav[indexPath.row].location
         cell.name.text = arrEventosFav[indexPath.row].name
+        cell.name.lineBreakMode = NSLineBreakMode.byWordWrapping
+        cell.name.numberOfLines = 0
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
