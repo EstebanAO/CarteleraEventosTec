@@ -38,6 +38,10 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var btCalendarioView: UIView!
+    @IBOutlet weak var lbDescription: UITextView!
+    
+    @IBOutlet weak var imgPetFriendly: UIImageView!
+    @IBOutlet weak var lbPetFriendly: UILabel!
     
     private let scopes = [kGTLRAuthScopeCalendar]
     
@@ -61,6 +65,12 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         lbContactPhone.text = eveTemp.contactPhone
         lbContactEmail.text = eveTemp.contactEmail
         lbCategory.text = eveTemp.category
+        lbDescription.text = eveTemp.description
+        lbDescription.layer.borderWidth = 1
+        lbDescription.layer.borderColor = UIColor(red: 229.0/255.0, green: 229.0/255.0, blue: 229.0/255.0, alpha: 1.0).cgColor
+        lbDescription.textContainerInset = UIEdgeInsetsMake(8,5,8,5)
+        lbDescription.layer.cornerRadius = 5
+        lbDescription.clipsToBounds = true
         
         // Configure Google Sign-in.
         GIDSignIn.sharedInstance().delegate = self
@@ -78,9 +88,10 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         {
             btFav.setImage(#imageLiteral(resourceName: "star-red-outline"), for: .normal)
         }
-        
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+//
+//        UINavigationBar.appearance().shadowImage = UIImage()
+//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+    
         
         lbName.lineBreakMode = NSLineBreakMode.byWordWrapping
         lbName.numberOfLines = 0
@@ -91,7 +102,15 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         btCalendarioView.dropShadow()
         btCalendarioView.layer.cornerRadius = 5
         btCalendarioView.clipsToBounds = true
-       
+        
+        if eveTemp.petFriendly == 1 {
+            imgPetFriendly.image = nil
+            lbPetFriendly.isHidden = true
+        }
+        else {
+            imgPetFriendly.image = #imageLiteral(resourceName: "pet-white")
+            lbPetFriendly.isHidden = false
+        }
     }
     
     override func viewDidLayoutSubviews() {

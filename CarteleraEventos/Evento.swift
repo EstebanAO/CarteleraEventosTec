@@ -28,7 +28,7 @@ class Evento{
     var description: String?
     var requirements: String?
     var schedule: String?
-    var petFriendly: String?
+    var petFriendly: Int?
     var contactPhone: String?
     var category: String?
     var contactName: String?
@@ -43,7 +43,7 @@ class Evento{
     var campus: String?
     var registrationMessage: String?
     
-    init( ide: String, fotoURL: String? = "", name: String? = "", startDate: String? = "",  location: String? = "", contactEmail: String? = "", description: String? = "", requirements: String? = "", schedule: String? = "", petFriendly: String? = "", contactPhone: String? = "", category: String? = "", contactName: String? = "", cost: String? = "", hasRegistration: String? = "", cancelled: String? = "", hasDeadline: String? = "", prefix: String? = "", registrationDeadline: String? = "", registrationUrl: String? = "", cancelMessage: String? = "",campus: String? = "", registrationMessage: String? = "")
+    init( ide: String, fotoURL: String? = "", name: String? = "", startDate: String? = "",  location: String? = "", contactEmail: String? = "", description: String? = "", requirements: String? = "", schedule: String? = "", petFriendly: Int? = 0, contactPhone: String? = "", category: String? = "", contactName: String? = "", cost: String? = "", hasRegistration: String? = "", cancelled: String? = "", hasDeadline: String? = "", prefix: String? = "", registrationDeadline: String? = "", registrationUrl: String? = "", cancelMessage: String? = "",campus: String? = "", registrationMessage: String? = "")
     {
         self.id = Int(ide)!
         self.startTime = "15:30"
@@ -88,7 +88,7 @@ class Evento{
         {
             self.schedule = schedule!
         }
-        if ( petFriendly != nil)
+        if ( petFriendly != nil )
         {
             self.petFriendly = petFriendly!
         }
