@@ -25,6 +25,23 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
     @IBOutlet weak var lbLugar: UILabel!
     @IBOutlet weak var lbFecha: UILabel!
     @IBOutlet weak var lbHora: UILabel!
+    @IBOutlet weak var btFav: UIButton!
+    @IBOutlet weak var lbContactName: UILabel!
+    
+    @IBOutlet weak var lbContactEmail: UILabel!
+    @IBOutlet weak var lbContactPhone: UILabel!
+    @IBOutlet weak var card: UIView!
+    @IBOutlet weak var titlesView: UIView!
+    
+    @IBOutlet weak var lbCategory: UILabel!
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var btCalendarioView: UIView!
+    @IBOutlet weak var lbDescription: UITextView!
+    
+    @IBOutlet weak var imgPetFriendly: UIImageView!
+    @IBOutlet weak var lbPetFriendly: UILabel!
     
     private let scopes = [kGTLRAuthScopeCalendar]
     
@@ -36,11 +53,24 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        scrollView.contentSize = mainView.frame.size
+        
         foto.image = eveTemp.foto
         lbName.text = eveTemp.name
         lbLugar.text = eveTemp.location
         lbFecha.text = String(describing: eveTemp.startDate)
         lbHora.text = eveTemp.startTime
+        
+        lbContactName.text = eveTemp.contactName
+        lbContactPhone.text = eveTemp.contactPhone
+        lbContactEmail.text = eveTemp.contactEmail
+        lbCategory.text = eveTemp.category
+        lbDescription.text = eveTemp.description
+        lbDescription.layer.borderWidth = 1
+        lbDescription.layer.borderColor = UIColor(red: 229.0/255.0, green: 229.0/255.0, blue: 229.0/255.0, alpha: 1.0).cgColor
+        lbDescription.textContainerInset = UIEdgeInsetsMake(8,5,8,5)
+        lbDescription.layer.cornerRadius = 5
+        lbDescription.clipsToBounds = true
         
         // Configure Google Sign-in.
         GIDSignIn.sharedInstance().delegate = self
@@ -48,9 +78,48 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         GIDSignIn.sharedInstance().scopes = scopes
         GIDSignIn.sharedInstance().signInSilently()
         
-        // Add the sign-in button.
-        view.addSubview(signInButton)
         
+        // Show favorite button according to favorite status
+        if (eveTemp.favorites)
+        {
+            btFav.setImage(#imageLiteral(resourceName: "star-red-fill"), for: .normal)
+        }
+        else
+        {
+            btFav.setImage(#imageLiteral(resourceName: "star-red-outline"), for: .normal)
+        }
+//
+//        UINavigationBar.appearance().shadowImage = UIImage()
+//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+    
+        
+        lbName.lineBreakMode = NSLineBreakMode.byWordWrapping
+        lbName.numberOfLines = 0
+        
+        card.dropShadow()
+        titlesView.createGradientLayer()
+        
+        btCalendarioView.dropShadow()
+        btCalendarioView.layer.cornerRadius = 5
+        btCalendarioView.clipsToBounds = true
+        
+        if eveTemp.petFriendly == 1 {
+            imgPetFriendly.image = nil
+            lbPetFriendly.isHidden = true
+        }
+        else {
+            imgPetFriendly.image = #imageLiteral(resourceName: "pet-white")
+            lbPetFriendly.isHidden = false
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        foto.layer.borderWidth = 5
+        foto.layer.masksToBounds = false
+        foto.layer.borderColor = UIColor.white.cgColor
+        foto.layer.cornerRadius = foto.frame.height/2
+        foto.clipsToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,11 +142,13 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         {
             delegado.modificaFavorito(fav: false, ide: eveTemp.id)
             eveTemp.favorites = false
+            btFav.setImage(#imageLiteral(resourceName: "star-red-outline"), for: .normal)
         }
         else
         {
             delegado.modificaFavorito(fav: true, ide: eveTemp.id)
             eveTemp.favorites = true
+            btFav.setImage(#imageLiteral(resourceName: "star-red-fill"), for: .normal)
         }        
     }
     
@@ -190,16 +261,50 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
             self.present(alertController, animated: true, completion: nil)
         } else {
             let alertController = UIAlertController(title: "Error", message:
-                "No se ha iniciado sesión", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
-            
+                "No se ha iniciado sesión con Google", preferredStyle: UIAlertControllerStyle.alert)
+           alertController.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.default,handler: nil))
+            alertController.addAction(UIAlertAction(title: "Iniciar sesión", style: UIAlertActionStyle.default,handler: {_ in self.btnSignInPressed()}))
             self.present(alertController, animated: true, completion: nil)
         }
+    }
+    
+    func btnSignInPressed() {
+        GIDSignIn.sharedInstance().signIn()
     }
     
     @IBAction func shareNative(_ sender: Any) {
         let activityVC = UIActivityViewController(activityItems: [self.eveTemp.foto as Any], applicationActivities: nil)
         self.present(activityVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func btCalendarsMenu(_ sender: Any) {
+        // 1
+        let optionMenu = UIAlertController(title: nil, message: "Escoge el calendario al que se desea guardar el evento", preferredStyle: .actionSheet)
+        
+        // 2
+        let calendarioIOS = UIAlertAction(title: "Calendario Apple", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.guardarEventoIOS(sender)
+        })
+        let canlendarioGoogle = UIAlertAction(title: "Google Calendar", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.guardarGoogle(sender as! UIButton)
+        })
+        
+        //
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Canceled")
+        })
+        
+        
+        // 4
+        optionMenu.addAction(calendarioIOS)
+        optionMenu.addAction(canlendarioGoogle)
+        optionMenu.addAction(cancelAction)
+        
+        // 5
+        self.present(optionMenu, animated: true, completion: nil)
     }
     
 }

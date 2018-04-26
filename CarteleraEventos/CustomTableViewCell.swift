@@ -12,7 +12,6 @@ class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var foto: UIImageView!
     
-    @IBOutlet weak var location: UILabel!
     @IBOutlet weak var startDate: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var startTime: UILabel!

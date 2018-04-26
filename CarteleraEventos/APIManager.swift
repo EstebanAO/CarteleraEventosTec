@@ -32,7 +32,7 @@ class APIManager{
                                             description: eve["description"] as? String,
                                             requirements: eve["requirementsToRegister"] as? String,
                                             schedule: eve["schedule"] as? String,
-                                            petFriendly: eve["petFriendly"] as? String,
+                                            petFriendly: eve["petFriendly"] as? Int,
                                             contactPhone: eve["contactPhone"] as? String,
                                             category: eve["category"] as? String,
                                             contactName: eve["contactName"] as? String,
