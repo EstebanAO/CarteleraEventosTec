@@ -2,13 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:CarteleraEventos/EventoFavoritoViewController.swift">
+      location = "group:/Users/EstebanAO/Google Drive/Escuela/ITC/Sexto semestre/MobilesIOS/CarteleraEventos/CarteleraEventos/EventoFavoritoViewController.swift">
    </FileRef>
    <FileRef
-      location = "group:CarteleraEventos/EventosFavoritos+CoreDataClass.swift">
+      location = "group:/Users/EstebanAO/Google Drive/Escuela/ITC/Sexto semestre/MobilesIOS/CarteleraEventos/CarteleraEventos/EventosFavoritos+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:CarteleraEventos/EventosFavoritos+CoreDataProperties.swift">
+      location = "group:/Users/EstebanAO/Google Drive/Escuela/ITC/Sexto semestre/MobilesIOS/CarteleraEventos/CarteleraEventos/EventosFavoritos+CoreDataProperties.swift">
    </FileRef>
    <FileRef
       location = "group:CarteleraEventos.xcodeproj">

@@ -90,15 +90,24 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        if (section == 0)
+        {
+            return 1
+        }
         return arrEventos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath.section == 0)
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cellTitle")! as! CustomTableViewCell
+            return cell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as! CustomTableViewCell
        
         cell.name.text = arrEventos[indexPath.row].name

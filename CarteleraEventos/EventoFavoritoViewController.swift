@@ -103,12 +103,16 @@ class EventoFavoritoViewController: UIViewController, UITableViewDelegate, UITab
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
     
     var arrEventosFav = [Evento]()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        if (section == 0)
+        {
+            return 1
+        }
         for fav in arrEventos
         {
             if (arrIndFav.contains(fav.id))
@@ -120,6 +124,11 @@ class EventoFavoritoViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath.section == 0)
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cellTitle")! as! CustomTableViewCell
+            return cell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as! CustomTableViewCell
         
         cell.name.text = arrEventosFav[indexPath.row].name
