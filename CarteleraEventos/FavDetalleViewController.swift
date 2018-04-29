@@ -11,30 +11,6 @@ import EventKit
 import GoogleAPIClientForREST
 import GoogleSignIn
 
-extension UIView {
-    func createGradientLayer() {
-        let colorTop =  UIColor.red.cgColor
-        let colorBottom = UIColor(red: 142.0/255.0, green: 14.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
-        
-        let gradientLayer = CAGradientLayer()
-        
-        gradientLayer.frame = self.bounds
-        gradientLayer.colors = [colorTop, colorBottom]
-        
-        self.layer.addSublayer(gradientLayer)
-    }
-    func dropShadow(scale: Bool = true) {
-        layer.masksToBounds = false
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.2
-        layer.shadowOffset = CGSize(width: 2, height: 2)
-        layer.shadowRadius = 4
-        
-        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
-        layer.shouldRasterize = true
-        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-    }
-}
 
 class FavDetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
@@ -100,7 +76,6 @@ class FavDetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
         lbName.numberOfLines = 0
         
         card.dropShadow()
-        titlesView.createGradientLayer()
         
         btCalendarioView.layer.cornerRadius = 5
         btCalendarioView.clipsToBounds = true
@@ -119,6 +94,10 @@ class FavDetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
         foto.layer.borderColor = UIColor.white.cgColor
         foto.layer.cornerRadius = foto.frame.height/2
         foto.clipsToBounds = true
+        titlesView.createGradientLayer()
+        titlesView.layer.layoutSublayers()
+        
+        btCalendarioView.layer.layoutSublayers()
     }
     
     /*

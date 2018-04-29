@@ -21,8 +21,8 @@
 		55AB6EAD20780CCD00DB4199 /* eventosFavoritos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6EAB20780CCD00DB4199 /* eventosFavoritos.xcdatamodeld */; };
 		55AB6EDB207812F500DB4199 /* EventosFavoritos+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6ED9207812F500DB4199 /* EventosFavoritos+CoreDataClass.swift */; };
 		55AB6EDC207812F500DB4199 /* EventosFavoritos+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6EDA207812F500DB4199 /* EventosFavoritos+CoreDataProperties.swift */; };
-		55AB6EDE2078236F00DB4199 /* EventoFavoritoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6EDD2078236F00DB4199 /* EventoFavoritoViewController.swift */; };
 		55AB6EE02078309100DB4199 /* FavDetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB6EDF2078309100DB4199 /* FavDetalleViewController.swift */; };
+		7A731368209229F9004B867D /* EventoFavoritoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A731367209229F9004B867D /* EventoFavoritoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,10 +55,10 @@
 		5564A845205DE64D005480E7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		557CA525B857861E271DB008 /* Pods_CarteleraEventos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarteleraEventos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55AB6EAC20780CCD00DB4199 /* eventosFavoritos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = eventosFavoritos.xcdatamodel; sourceTree = "<group>"; };
-		55AB6ED9207812F500DB4199 /* EventosFavoritos+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "EventosFavoritos+CoreDataClass.swift"; path = "/Users/EstebanAO/Google Drive/Escuela/ITC/Sexto semestre/MobilesIOS/CarteleraEventos/CarteleraEventos/EventosFavoritos+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		55AB6EDA207812F500DB4199 /* EventosFavoritos+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "EventosFavoritos+CoreDataProperties.swift"; path = "/Users/EstebanAO/Google Drive/Escuela/ITC/Sexto semestre/MobilesIOS/CarteleraEventos/CarteleraEventos/EventosFavoritos+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		55AB6EDD2078236F00DB4199 /* EventoFavoritoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventoFavoritoViewController.swift; path = "/Users/EstebanAO/Google Drive/Escuela/ITC/Sexto semestre/MobilesIOS/CarteleraEventos/CarteleraEventos/EventoFavoritoViewController.swift"; sourceTree = "<absolute>"; };
+		55AB6ED9207812F500DB4199 /* EventosFavoritos+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "EventosFavoritos+CoreDataClass.swift"; path = "/Users/anamarcelav/Documents/ITESM/CarteleraEventosTec/CarteleraEventos/EventosFavoritos+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		55AB6EDA207812F500DB4199 /* EventosFavoritos+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "EventosFavoritos+CoreDataProperties.swift"; path = "/Users/anamarcelav/Documents/ITESM/CarteleraEventosTec/CarteleraEventos/EventosFavoritos+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		55AB6EDF2078309100DB4199 /* FavDetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavDetalleViewController.swift; sourceTree = "<group>"; };
+		7A731367209229F9004B867D /* EventoFavoritoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventoFavoritoViewController.swift; sourceTree = "<group>"; };
 		C5BA5A66F4958C648EC5F6EA /* Pods-CarteleraEventos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarteleraEventos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarteleraEventos/Pods-CarteleraEventos.debug.xcconfig"; sourceTree = "<group>"; };
 		CF902FEF8F66FA10698D89E8 /* Pods-CarteleraEventos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarteleraEventos.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarteleraEventos/Pods-CarteleraEventos.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,7 +106,7 @@
 				55004D6E2059FDA60087BF70 /* DetalleViewController.swift */,
 				55AB6EDF2078309100DB4199 /* FavDetalleViewController.swift */,
 				5525AADB20585590001E3E1C /* CustomTableViewCell.swift */,
-				55AB6EDD2078236F00DB4199 /* EventoFavoritoViewController.swift */,
+				7A731367209229F9004B867D /* EventoFavoritoViewController.swift */,
 				55AB6ED9207812F500DB4199 /* EventosFavoritos+CoreDataClass.swift */,
 				55AB6EDA207812F500DB4199 /* EventosFavoritos+CoreDataProperties.swift */,
 				5525AACC20584883001E3E1C /* Assets.xcassets */,
@@ -172,7 +172,7 @@
 				TargetAttributes = {
 					5525AABF20584882001E3E1C = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 34E55V7PHJ;
+						DevelopmentTeam = 5G69976HLH;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -296,6 +296,7 @@
 				55004D6F2059FDA60087BF70 /* DetalleViewController.swift in Sources */,
 				5525AADA20584C16001E3E1C /* Evento.swift in Sources */,
 				5525AADC20585590001E3E1C /* CustomTableViewCell.swift in Sources */,
+				7A731368209229F9004B867D /* EventoFavoritoViewController.swift in Sources */,
 				55AB6EE02078309100DB4199 /* FavDetalleViewController.swift in Sources */,
 				55AB6EDB207812F500DB4199 /* EventosFavoritos+CoreDataClass.swift in Sources */,
 				5525AAC420584882001E3E1C /* AppDelegate.swift in Sources */,
@@ -303,7 +304,6 @@
 				55AB6EAD20780CCD00DB4199 /* eventosFavoritos.xcdatamodeld in Sources */,
 				55AB6EDC207812F500DB4199 /* EventosFavoritos+CoreDataProperties.swift in Sources */,
 				5564A80F205DC7F3005480E7 /* APIManager.swift in Sources */,
-				55AB6EDE2078236F00DB4199 /* EventoFavoritoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,14 +438,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 34E55V7PHJ;
+				DEVELOPMENT_TEAM = 5G69976HLH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CarteleraEventos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ESCAMA.CarteleraEventos;
+				PRODUCT_BUNDLE_IDENTIFIER = CarteleraEventos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -458,14 +458,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 34E55V7PHJ;
+				DEVELOPMENT_TEAM = 5G69976HLH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CarteleraEventos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ESCAMA.CarteleraEventos;
+				PRODUCT_BUNDLE_IDENTIFIER = CarteleraEventos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;

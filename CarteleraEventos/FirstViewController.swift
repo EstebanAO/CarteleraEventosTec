@@ -102,6 +102,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return arrEventos.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        if (indexPath.section == 0) {
+            
+            return 100.0
+        }
+        
+        return 167.0
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (indexPath.section == 0)
         {
@@ -125,6 +135,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         return cell
     }
+    
+    
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "mostrar")

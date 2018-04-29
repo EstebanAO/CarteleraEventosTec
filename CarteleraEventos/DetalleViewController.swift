@@ -15,6 +15,37 @@ protocol protocoloModificarFavorito{
     func modificaFavorito(fav: Bool, ide: Int )
 }
 
+extension UIView {
+    func createGradientLayer() {
+        let colorTop =  UIColor.red.cgColor
+        let colorBottom = UIColor(red: 142.0/255.0, green: 14.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.bounds
+        gradientLayer.colors = [colorTop, colorBottom]
+        
+        self.layer.addSublayer(gradientLayer)
+    }
+    
+    public func layoutSublayers(of layer: CALayer) {
+        layer.frame = self.bounds
+        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+    }
+    
+    func dropShadow(scale: Bool = true) {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.2
+        layer.shadowOffset = CGSize(width: 2, height: 2)
+        layer.shadowRadius = 4
+        
+        
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
+}
+
+
 class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
     var eveTemp : Evento!
@@ -43,6 +74,7 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
     @IBOutlet weak var imgPetFriendly: UIImageView!
     @IBOutlet weak var lbPetFriendly: UILabel!
     
+    @IBOutlet weak var lbCalendario: UIButton!
     private let scopes = [kGTLRAuthScopeCalendar]
     
     private let service = GTLRCalendarService()
@@ -97,7 +129,6 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         lbName.numberOfLines = 0
         
         card.dropShadow()
-        titlesView.createGradientLayer()
         
         btCalendarioView.dropShadow()
         btCalendarioView.layer.cornerRadius = 5
@@ -120,6 +151,11 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         foto.layer.borderColor = UIColor.white.cgColor
         foto.layer.cornerRadius = foto.frame.height/2
         foto.clipsToBounds = true
+        titlesView.createGradientLayer()
+        titlesView.layer.layoutSublayers()
+        
+        foto.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -260,7 +296,7 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
             self.present(alertController, animated: true, completion: nil)
         } else {
-            let alertController = UIAlertController(title: "Error", message:
+            let alertController = UIAlertController(title: "Cuenta de Google", message:
                 "No se ha iniciado sesión con Google", preferredStyle: UIAlertControllerStyle.alert)
            alertController.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.default,handler: nil))
             alertController.addAction(UIAlertAction(title: "Iniciar sesión", style: UIAlertActionStyle.default,handler: {_ in self.btnSignInPressed()}))

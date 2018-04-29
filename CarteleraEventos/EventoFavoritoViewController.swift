@@ -146,9 +146,9 @@ class EventoFavoritoViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "mostrar")
+        if (segue.identifier == "mostrarFav")
         {
-            let vistaDetalle = segue.destination as! FavDetalleViewController
+            let vistaDetalle = segue.destination as! DetalleViewController
             let indexPath = eventosTableView.indexPathForSelectedRow!
             vistaDetalle.eveTemp = arrEventosFav[indexPath.row]
             eventosTableView.deselectRow(at: indexPath, animated: true)
