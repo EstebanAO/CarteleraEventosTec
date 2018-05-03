@@ -149,7 +149,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             eventosTableView.deselectRow(at: indexPath, animated: true)
             vistaDetalle.delegado = self
             indSelected = indexPath.row
-        }
+        }        
     }
     
     @IBAction func unwindDetalle(for segue: UIStoryboardSegue, sender: Any?){

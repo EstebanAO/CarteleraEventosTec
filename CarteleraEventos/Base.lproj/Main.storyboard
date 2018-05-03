@@ -36,23 +36,11 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoEventosTec-final" translatesAutoresizingMaskIntoConstraints="NO" id="OQr-C2-ftH">
                                                     <rect key="frame" x="32" y="15.5" width="256" height="69"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2SE-Hn-SdK">
-                                                    <rect key="frame" x="283" y="11" width="22" height="22"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <state key="normal">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="az9-sh-B5L" kind="presentation" identifier="info" id="sKF-gY-DVi"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="OQr-C2-ftH" firstAttribute="leading" secondItem="myv-XZ-LUp" secondAttribute="leading" constant="32" id="BIg-eF-F5l"/>
-                                                <constraint firstItem="2SE-Hn-SdK" firstAttribute="top" secondItem="myv-XZ-LUp" secondAttribute="topMargin" id="cAv-Nb-odq"/>
                                                 <constraint firstAttribute="trailing" secondItem="OQr-C2-ftH" secondAttribute="trailing" constant="32" id="kA2-sc-qfT"/>
-                                                <constraint firstItem="2SE-Hn-SdK" firstAttribute="trailing" secondItem="myv-XZ-LUp" secondAttribute="trailingMargin" id="zAx-rj-d7T"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.69768053756476678" green="0.040180985626647688" blue="0.0076684850798542465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -111,15 +99,27 @@
                                     <outlet property="dataSource" destination="9pv-A4-QxB" id="y4o-z6-g8D"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2SE-Hn-SdK">
+                                <rect key="frame" x="282" y="42" width="22" height="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="az9-sh-B5L" kind="presentation" identifier="info" id="sKF-gY-DVi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Rva-Pl-gON" secondAttribute="trailing" id="2h5-eF-OMi"/>
+                            <constraint firstItem="2SE-Hn-SdK" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="AJy-pS-UXc"/>
                             <constraint firstItem="Rva-Pl-gON" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="AsV-Xr-DTR"/>
                             <constraint firstAttribute="trailing" secondItem="Rva-Pl-gON" secondAttribute="trailing" id="KDA-KX-798"/>
                             <constraint firstItem="Rva-Pl-gON" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="T3b-Zi-KFM"/>
                             <constraint firstItem="Rva-Pl-gON" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="Tr3-yV-ZKD"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Rva-Pl-gON" secondAttribute="bottom" id="acN-b3-1JA"/>
+                            <constraint firstItem="2SE-Hn-SdK" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="22" id="g79-Sv-7op"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Rva-Pl-gON" secondAttribute="bottom" id="vFr-KC-OQk"/>
                         </constraints>
                     </view>
@@ -144,16 +144,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="holis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y69-ip-qIw">
-                                <rect key="frame" x="139" y="96" width="36" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esta aplicación fue desarrollada para la materia de Proyecto de Desarrollo para Dispositivos Móviles por:" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y69-ip-qIw">
+                                <rect key="frame" x="16" y="202" width="288" height="111"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UdO-Wp-ECT">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UdO-Wp-ECT">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="mM8-hU-rOT"/>
+                                </constraints>
                                 <color key="barTintColor" red="1" green="0.058155415100000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -172,14 +173,75 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Ana Marcela Villarreal Martínez" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncq-xf-PL1">
+                                <rect key="frame" x="34" y="315" width="249" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Esteban Arocha Ortuño" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngY-ZG-qrH">
+                                <rect key="frame" x="34" y="344" width="191" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Carlos David López Ruiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2c-O7-kFg">
+                                <rect key="frame" x="34" y="373" width="197" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconEventosTec" translatesAutoresizingMaskIntoConstraints="NO" id="9pu-3J-0sz">
+                                <rect key="frame" x="94" y="87" width="131" height="131"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="8OP-A3-2wW"/>
+                                    <constraint firstAttribute="height" constant="131" id="G5v-WD-Ibd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estudiantes de Ingeniería en Tecnologías Computacionales en el Tecnológico de Monterrey campus Monterrey" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFK-0S-9Dh">
+                                <rect key="frame" x="16" y="407" width="288" height="81.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAv-2G-XH3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Y69-ip-qIw" firstAttribute="top" secondItem="UdO-Wp-ECT" secondAttribute="bottom" constant="138" id="1aC-JO-fRO"/>
+                            <constraint firstItem="GAv-2G-XH3" firstAttribute="top" secondItem="axI-eU-1xc" secondAttribute="top" id="3Ub-fJ-wKi"/>
+                            <constraint firstItem="ncq-xf-PL1" firstAttribute="top" secondItem="9pu-3J-0sz" secondAttribute="bottom" constant="97" id="3Un-33-Dhw"/>
+                            <constraint firstItem="Y69-ip-qIw" firstAttribute="leading" secondItem="axI-eU-1xc" secondAttribute="leadingMargin" id="4Ia-BZ-2zP"/>
+                            <constraint firstItem="9pu-3J-0sz" firstAttribute="top" secondItem="UdO-Wp-ECT" secondAttribute="bottom" constant="23" id="6rM-nt-qfz"/>
+                            <constraint firstItem="M2c-O7-kFg" firstAttribute="top" secondItem="ngY-ZG-qrH" secondAttribute="bottom" constant="8" id="7nX-KO-3I7"/>
+                            <constraint firstItem="M2c-O7-kFg" firstAttribute="leading" secondItem="axI-eU-1xc" secondAttribute="leadingMargin" constant="18" id="8Lm-aa-nqQ"/>
+                            <constraint firstItem="cFK-0S-9Dh" firstAttribute="leading" secondItem="axI-eU-1xc" secondAttribute="leadingMargin" id="96G-bA-4fE"/>
+                            <constraint firstItem="UdO-Wp-ECT" firstAttribute="leading" secondItem="axI-eU-1xc" secondAttribute="leading" id="BHk-UM-Zbk"/>
+                            <constraint firstItem="UdO-Wp-ECT" firstAttribute="leading" secondItem="GAv-2G-XH3" secondAttribute="leading" id="Ggo-MZ-1Fr"/>
+                            <constraint firstItem="UdO-Wp-ECT" firstAttribute="top" secondItem="GAv-2G-XH3" secondAttribute="bottom" id="MO2-DI-NXU"/>
+                            <constraint firstItem="UdO-Wp-ECT" firstAttribute="top" secondItem="y8j-RX-paZ" secondAttribute="bottom" id="MSi-fd-Gj4"/>
+                            <constraint firstItem="ngY-ZG-qrH" firstAttribute="leading" secondItem="axI-eU-1xc" secondAttribute="leadingMargin" constant="18" id="Mv9-N4-9vh"/>
+                            <constraint firstItem="ncq-xf-PL1" firstAttribute="top" secondItem="Y69-ip-qIw" secondAttribute="bottom" constant="2" id="WaD-HE-1oH"/>
+                            <constraint firstItem="cFK-0S-9Dh" firstAttribute="trailing" secondItem="axI-eU-1xc" secondAttribute="trailingMargin" id="YE0-Zd-01y"/>
+                            <constraint firstItem="cFK-0S-9Dh" firstAttribute="top" secondItem="M2c-O7-kFg" secondAttribute="bottom" constant="13" id="YYV-bH-etr"/>
+                            <constraint firstItem="9pu-3J-0sz" firstAttribute="centerX" secondItem="axI-eU-1xc" secondAttribute="centerX" id="c1h-JG-Tje"/>
+                            <constraint firstItem="Y69-ip-qIw" firstAttribute="trailing" secondItem="axI-eU-1xc" secondAttribute="trailingMargin" id="cDN-Uk-Aef"/>
+                            <constraint firstAttribute="trailing" secondItem="UdO-Wp-ECT" secondAttribute="trailing" id="dAa-b0-bqp"/>
+                            <constraint firstItem="UdO-Wp-ECT" firstAttribute="top" secondItem="GAv-2G-XH3" secondAttribute="bottom" id="i3C-ly-5Ly"/>
+                            <constraint firstItem="ngY-ZG-qrH" firstAttribute="top" secondItem="ncq-xf-PL1" secondAttribute="bottom" constant="8" id="mui-u9-MbU"/>
+                            <constraint firstItem="ncq-xf-PL1" firstAttribute="leading" secondItem="axI-eU-1xc" secondAttribute="leadingMargin" constant="18" id="mxo-fy-2c1"/>
+                            <constraint firstItem="UdO-Wp-ECT" firstAttribute="top" secondItem="GAv-2G-XH3" secondAttribute="bottom" id="sGk-wl-6n8"/>
+                            <constraint firstItem="UdO-Wp-ECT" firstAttribute="trailing" secondItem="GAv-2G-XH3" secondAttribute="trailing" id="vdg-lk-VsS"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dh-IV-Zpa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="zBY-6g-nVm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1703" y="-1024"/>
+            <point key="canvasLocation" x="1702.5" y="-1024.6478873239437"/>
         </scene>
         <!--Detalle View Controller-->
         <scene sceneID="Ht0-dU-ptC">
@@ -196,8 +258,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIP-im-sp9">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hpP-XH-w3S">
-                                        <rect key="frame" x="0.0" y="-213" width="320" height="877"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpP-XH-w3S">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="877"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1u-WF-x7w">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="402"/>
@@ -839,6 +901,7 @@
     <resources>
         <image name="calendar" width="50" height="50"/>
         <image name="first" width="30" height="30"/>
+        <image name="iconEventosTec" width="512" height="512"/>
         <image name="location" width="50" height="50"/>
         <image name="logoEventosTec-final" width="630" height="69"/>
         <image name="person" width="24" height="24"/>
