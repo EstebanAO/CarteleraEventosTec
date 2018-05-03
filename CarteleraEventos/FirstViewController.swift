@@ -156,6 +156,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         GlobalVar.arrEventsGlobal = arrEventos
     }
     
+    @IBAction func unwindInfo(for segue: UIStoryboardSegue, sender: Any?){
+    }
+    
     func buscaFavoritos()
     {
         arrIndFav.removeAll()

@@ -262,10 +262,16 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         } else {
             self.signInButton.isHidden = true
             self.service.authorizer = user.authentication.fetcherAuthorizer()
+            
+            let alertControllerAgendar = UIAlertController(title: "Agendar evento", message:
+                "¿Desea agendar el evento en el calendario elegido?", preferredStyle: UIAlertControllerStyle.alert)
+            alertControllerAgendar.addAction(UIAlertAction(title: "Agendar", style: UIAlertActionStyle.default,handler: {_ in self.guardarGoogle(nil)}))
+            alertControllerAgendar.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.default,handler: nil))
+            self.present(alertControllerAgendar, animated: true, completion: nil)
         }
     }
 
-    @IBAction func guardarGoogle(_ sender: UIButton) {
+    @IBAction func guardarGoogle(_ sender: UIButton?) {
         if GIDSignIn.sharedInstance().hasAuthInKeychain() {
             let newEvent: GTLRCalendar_Event = GTLRCalendar_Event()
             

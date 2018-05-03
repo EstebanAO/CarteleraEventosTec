@@ -36,11 +36,23 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoEventosTec-final" translatesAutoresizingMaskIntoConstraints="NO" id="OQr-C2-ftH">
                                                     <rect key="frame" x="32" y="15.5" width="256" height="69"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2SE-Hn-SdK">
+                                                    <rect key="frame" x="283" y="11" width="22" height="22"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="az9-sh-B5L" kind="presentation" identifier="info" id="sKF-gY-DVi"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="OQr-C2-ftH" firstAttribute="leading" secondItem="myv-XZ-LUp" secondAttribute="leading" constant="32" id="BIg-eF-F5l"/>
+                                                <constraint firstItem="2SE-Hn-SdK" firstAttribute="top" secondItem="myv-XZ-LUp" secondAttribute="topMargin" id="cAv-Nb-odq"/>
                                                 <constraint firstAttribute="trailing" secondItem="OQr-C2-ftH" secondAttribute="trailing" constant="32" id="kA2-sc-qfT"/>
+                                                <constraint firstItem="2SE-Hn-SdK" firstAttribute="trailing" secondItem="myv-XZ-LUp" secondAttribute="trailingMargin" id="zAx-rj-d7T"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.69768053756476678" green="0.040180985626647688" blue="0.0076684850798542465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -119,6 +131,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="770.625" y="-317.95774647887322"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lnp-Jb-yPE">
+            <objects>
+                <viewController id="az9-sh-B5L" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y8j-RX-paZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ihs-Rf-ycy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="axI-eU-1xc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="holis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y69-ip-qIw">
+                                <rect key="frame" x="139" y="96" width="36" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UdO-Wp-ECT">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="1" green="0.058155415100000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Información" id="ZZg-x3-Oa9">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="AIN-uf-7ah">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <segue destination="zBY-6g-nVm" kind="unwind" unwindAction="unwindInfoFor:sender:" id="YpO-uL-6bW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2dh-IV-Zpa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zBY-6g-nVm" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1703" y="-1024"/>
         </scene>
         <!--Detalle View Controller-->
         <scene sceneID="Ht0-dU-ptC">
