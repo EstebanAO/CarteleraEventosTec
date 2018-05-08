@@ -123,7 +123,7 @@
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Rva-Pl-gON" secondAttribute="bottom" id="vFr-KC-OQk"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Eventos" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Eventos" image="event-tabbar" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="eventosTableView" destination="Rva-Pl-gON" id="r9C-NB-BMf"/>
                     </connections>
@@ -132,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="770.625" y="-317.95774647887322"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller Info-->
         <scene sceneID="lnp-Jb-yPE">
             <objects>
-                <viewController id="az9-sh-B5L" sceneMemberID="viewController">
+                <viewController id="az9-sh-B5L" customClass="ViewControllerInfo" customModule="CarteleraEventos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y8j-RX-paZ"/>
                         <viewControllerLayoutGuide type="bottom" id="Ihs-Rf-ycy"/>
@@ -144,12 +144,94 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esta aplicación fue desarrollada para la materia de Proyecto de Desarrollo para Dispositivos Móviles por:" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y69-ip-qIw">
-                                <rect key="frame" x="16" y="202" width="288" height="111"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sU6-0s-eH4">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIf-D7-tMK">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="592"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y69-ip-qIw">
+                                                <rect key="frame" x="16" y="153" width="288" height="125.5"/>
+                                                <string key="text">EventosTec ha sido desarrollado por estudiantes del Tecnológico de Monterrey durante el semestre Enero Mayo de 2018, como parte del curso Desarrollo de Aplicaciones para Dispositivos Móviles y asesorados por la maestra Yolanda Martínez Treviño</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Ana Marcela Villarreal Martínez" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncq-xf-PL1">
+                                                <rect key="frame" x="35" y="328" width="223.5" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Carlos David López Ruiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2c-O7-kFg">
+                                                <rect key="frame" x="35" y="346" width="176.5" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconEventosTec" translatesAutoresizingMaskIntoConstraints="NO" id="9pu-3J-0sz">
+                                                <rect key="frame" x="94" y="23" width="131" height="131"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="131" id="8OP-A3-2wW"/>
+                                                    <constraint firstAttribute="height" constant="131" id="G5v-WD-Ibd"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventosTec se distribuye como está de manera gratuita y se prohíbe su distribución y uso con fines de lucro." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFK-0S-9Dh">
+                                                <rect key="frame" x="16" y="411" width="288" height="54"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desarrolladores:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLd-3H-YDX">
+                                                <rect key="frame" x="16" y="304" width="112.5" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Esteban Arocha Ortuño" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngY-ZG-qrH">
+                                                <rect key="frame" x="35" y="364" width="171" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Íconos obtenidos de icons8.com" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biu-x6-rnL">
+                                                <rect key="frame" x="16" y="505" width="232.5" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="M2c-O7-kFg" firstAttribute="leading" secondItem="rIf-D7-tMK" secondAttribute="leading" constant="35" id="0K1-lc-akf"/>
+                                            <constraint firstItem="biu-x6-rnL" firstAttribute="top" secondItem="cFK-0S-9Dh" secondAttribute="bottom" constant="40" id="1h7-sU-hw3"/>
+                                            <constraint firstItem="cFK-0S-9Dh" firstAttribute="leading" secondItem="rIf-D7-tMK" secondAttribute="leading" constant="16" id="FKr-tW-W48"/>
+                                            <constraint firstItem="9pu-3J-0sz" firstAttribute="centerX" secondItem="rIf-D7-tMK" secondAttribute="centerX" id="G8t-be-RKv"/>
+                                            <constraint firstAttribute="trailing" secondItem="cFK-0S-9Dh" secondAttribute="trailing" constant="16" id="GdI-TW-JBb"/>
+                                            <constraint firstItem="9pu-3J-0sz" firstAttribute="top" secondItem="rIf-D7-tMK" secondAttribute="top" constant="23" id="Ob5-z3-zuO"/>
+                                            <constraint firstItem="FLd-3H-YDX" firstAttribute="top" secondItem="Y69-ip-qIw" secondAttribute="bottom" constant="25.5" id="fKt-Fg-eR7"/>
+                                            <constraint firstItem="biu-x6-rnL" firstAttribute="leading" secondItem="rIf-D7-tMK" secondAttribute="leading" constant="16" id="fbA-hv-W3S"/>
+                                            <constraint firstItem="cFK-0S-9Dh" firstAttribute="top" secondItem="ngY-ZG-qrH" secondAttribute="bottom" constant="29" id="feu-q7-Qos"/>
+                                            <constraint firstItem="ncq-xf-PL1" firstAttribute="top" secondItem="FLd-3H-YDX" secondAttribute="bottom" constant="6" id="fm5-1x-upo"/>
+                                            <constraint firstItem="FLd-3H-YDX" firstAttribute="leading" secondItem="rIf-D7-tMK" secondAttribute="leading" constant="16" id="fxt-Cm-6de"/>
+                                            <constraint firstItem="ngY-ZG-qrH" firstAttribute="top" secondItem="M2c-O7-kFg" secondAttribute="bottom" id="gBd-ya-oS7"/>
+                                            <constraint firstItem="M2c-O7-kFg" firstAttribute="top" secondItem="ncq-xf-PL1" secondAttribute="bottom" id="gW0-vM-Qvf"/>
+                                            <constraint firstAttribute="height" constant="592" id="jSV-13-RsZ"/>
+                                            <constraint firstItem="Y69-ip-qIw" firstAttribute="top" secondItem="rIf-D7-tMK" secondAttribute="top" constant="153" id="l7O-Zj-Zuc"/>
+                                            <constraint firstAttribute="trailing" secondItem="Y69-ip-qIw" secondAttribute="trailing" constant="16" id="rKh-AT-Xx0"/>
+                                            <constraint firstItem="ncq-xf-PL1" firstAttribute="leading" secondItem="rIf-D7-tMK" secondAttribute="leading" constant="35" id="tgk-Ou-wgO"/>
+                                            <constraint firstItem="ngY-ZG-qrH" firstAttribute="leading" secondItem="rIf-D7-tMK" secondAttribute="leading" constant="35" id="u27-Jb-ebr"/>
+                                            <constraint firstItem="Y69-ip-qIw" firstAttribute="leading" secondItem="rIf-D7-tMK" secondAttribute="leading" constant="16" id="x7S-Sm-tf1"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rIf-D7-tMK" secondAttribute="trailing" id="Ghq-yB-Ohb"/>
+                                    <constraint firstAttribute="bottom" secondItem="rIf-D7-tMK" secondAttribute="bottom" id="HCu-io-acc"/>
+                                    <constraint firstItem="rIf-D7-tMK" firstAttribute="top" secondItem="sU6-0s-eH4" secondAttribute="top" id="Ls2-Sm-jFk"/>
+                                    <constraint firstItem="rIf-D7-tMK" firstAttribute="leading" secondItem="sU6-0s-eH4" secondAttribute="leading" id="f1s-DL-wBJ"/>
+                                </constraints>
+                            </scrollView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UdO-Wp-ECT">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <constraints>
@@ -173,37 +255,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Ana Marcela Villarreal Martínez" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncq-xf-PL1">
-                                <rect key="frame" x="34" y="315" width="249" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Esteban Arocha Ortuño" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngY-ZG-qrH">
-                                <rect key="frame" x="34" y="344" width="191" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Carlos David López Ruiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2c-O7-kFg">
-                                <rect key="frame" x="34" y="373" width="197" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconEventosTec" translatesAutoresizingMaskIntoConstraints="NO" id="9pu-3J-0sz">
-                                <rect key="frame" x="94" y="87" width="131" height="131"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="131" id="8OP-A3-2wW"/>
-                                    <constraint firstAttribute="height" constant="131" id="G5v-WD-Ibd"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estudiantes de Ingeniería en Tecnologías Computacionales en el Tecnológico de Monterrey campus Monterrey" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFK-0S-9Dh">
-                                <rect key="frame" x="16" y="407" width="288" height="81.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAv-2G-XH3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -211,37 +262,31 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Y69-ip-qIw" firstAttribute="top" secondItem="UdO-Wp-ECT" secondAttribute="bottom" constant="138" id="1aC-JO-fRO"/>
                             <constraint firstItem="GAv-2G-XH3" firstAttribute="top" secondItem="axI-eU-1xc" secondAttribute="top" id="3Ub-fJ-wKi"/>
-                            <constraint firstItem="ncq-xf-PL1" firstAttribute="top" secondItem="9pu-3J-0sz" secondAttribute="bottom" constant="97" id="3Un-33-Dhw"/>
-                            <constraint firstItem="Y69-ip-qIw" firstAttribute="leading" secondItem="axI-eU-1xc" secondAttribute="leadingMargin" id="4Ia-BZ-2zP"/>
-                            <constraint firstItem="9pu-3J-0sz" firstAttribute="top" secondItem="UdO-Wp-ECT" secondAttribute="bottom" constant="23" id="6rM-nt-qfz"/>
-                            <constraint firstItem="M2c-O7-kFg" firstAttribute="top" secondItem="ngY-ZG-qrH" secondAttribute="bottom" constant="8" id="7nX-KO-3I7"/>
-                            <constraint firstItem="M2c-O7-kFg" firstAttribute="leading" secondItem="axI-eU-1xc" secondAttribute="leadingMargin" constant="18" id="8Lm-aa-nqQ"/>
-                            <constraint firstItem="cFK-0S-9Dh" firstAttribute="leading" secondItem="axI-eU-1xc" secondAttribute="leadingMargin" id="96G-bA-4fE"/>
                             <constraint firstItem="UdO-Wp-ECT" firstAttribute="leading" secondItem="axI-eU-1xc" secondAttribute="leading" id="BHk-UM-Zbk"/>
+                            <constraint firstItem="sU6-0s-eH4" firstAttribute="leading" secondItem="axI-eU-1xc" secondAttribute="leading" id="DWz-7H-pkF"/>
                             <constraint firstItem="UdO-Wp-ECT" firstAttribute="leading" secondItem="GAv-2G-XH3" secondAttribute="leading" id="Ggo-MZ-1Fr"/>
                             <constraint firstItem="UdO-Wp-ECT" firstAttribute="top" secondItem="GAv-2G-XH3" secondAttribute="bottom" id="MO2-DI-NXU"/>
                             <constraint firstItem="UdO-Wp-ECT" firstAttribute="top" secondItem="y8j-RX-paZ" secondAttribute="bottom" id="MSi-fd-Gj4"/>
-                            <constraint firstItem="ngY-ZG-qrH" firstAttribute="leading" secondItem="axI-eU-1xc" secondAttribute="leadingMargin" constant="18" id="Mv9-N4-9vh"/>
-                            <constraint firstItem="ncq-xf-PL1" firstAttribute="top" secondItem="Y69-ip-qIw" secondAttribute="bottom" constant="2" id="WaD-HE-1oH"/>
-                            <constraint firstItem="cFK-0S-9Dh" firstAttribute="trailing" secondItem="axI-eU-1xc" secondAttribute="trailingMargin" id="YE0-Zd-01y"/>
-                            <constraint firstItem="cFK-0S-9Dh" firstAttribute="top" secondItem="M2c-O7-kFg" secondAttribute="bottom" constant="13" id="YYV-bH-etr"/>
-                            <constraint firstItem="9pu-3J-0sz" firstAttribute="centerX" secondItem="axI-eU-1xc" secondAttribute="centerX" id="c1h-JG-Tje"/>
-                            <constraint firstItem="Y69-ip-qIw" firstAttribute="trailing" secondItem="axI-eU-1xc" secondAttribute="trailingMargin" id="cDN-Uk-Aef"/>
+                            <constraint firstItem="rIf-D7-tMK" firstAttribute="width" secondItem="axI-eU-1xc" secondAttribute="width" id="NY8-nK-yAd"/>
+                            <constraint firstItem="sU6-0s-eH4" firstAttribute="top" secondItem="UdO-Wp-ECT" secondAttribute="bottom" id="SQ3-yr-4HR"/>
                             <constraint firstAttribute="trailing" secondItem="UdO-Wp-ECT" secondAttribute="trailing" id="dAa-b0-bqp"/>
+                            <constraint firstItem="Ihs-Rf-ycy" firstAttribute="top" secondItem="sU6-0s-eH4" secondAttribute="bottom" id="dce-g1-lod"/>
+                            <constraint firstAttribute="trailing" secondItem="sU6-0s-eH4" secondAttribute="trailing" id="dxv-CV-NCo"/>
                             <constraint firstItem="UdO-Wp-ECT" firstAttribute="top" secondItem="GAv-2G-XH3" secondAttribute="bottom" id="i3C-ly-5Ly"/>
-                            <constraint firstItem="ngY-ZG-qrH" firstAttribute="top" secondItem="ncq-xf-PL1" secondAttribute="bottom" constant="8" id="mui-u9-MbU"/>
-                            <constraint firstItem="ncq-xf-PL1" firstAttribute="leading" secondItem="axI-eU-1xc" secondAttribute="leadingMargin" constant="18" id="mxo-fy-2c1"/>
                             <constraint firstItem="UdO-Wp-ECT" firstAttribute="top" secondItem="GAv-2G-XH3" secondAttribute="bottom" id="sGk-wl-6n8"/>
                             <constraint firstItem="UdO-Wp-ECT" firstAttribute="trailing" secondItem="GAv-2G-XH3" secondAttribute="trailing" id="vdg-lk-VsS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="rIf-D7-tMK" id="4tI-JF-4jA"/>
+                        <outlet property="scroll" destination="sU6-0s-eH4" id="4yz-Qo-wSx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dh-IV-Zpa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="zBY-6g-nVm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1702.5" y="-1024.6478873239437"/>
+            <point key="canvasLocation" x="1852.5" y="-515.49295774647885"/>
         </scene>
         <!--Detalle View Controller-->
         <scene sceneID="Ht0-dU-ptC">
@@ -563,7 +608,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lj7-NR-zGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Nsy-Rf-wk4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1702.5" y="-319.01408450704224"/>
+            <point key="canvasLocation" x="1856" y="276"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -584,7 +629,7 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Evento Favorito View Controller-->
+        <!--Favoritos-->
         <scene sceneID="GD8-Xg-hSo">
             <objects>
                 <viewController id="RFj-8d-B9b" customClass="EventoFavoritoViewController" customModule="CarteleraEventos" customModuleProvider="target" sceneMemberID="viewController">
@@ -680,7 +725,7 @@
                             <constraint firstItem="3GT-Vb-FJe" firstAttribute="top" secondItem="88S-Yb-wrl" secondAttribute="bottom" id="tpp-bE-Yyl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="gdh-SZ-Pxd"/>
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="star-tabbar" selectedImage="star-tabbar" id="gdh-SZ-Pxd"/>
                     <connections>
                         <outlet property="eventosTableView" destination="88S-Yb-wrl" id="XK6-0J-xXa"/>
                     </connections>
@@ -692,14 +737,15 @@
     </scenes>
     <resources>
         <image name="calendar" width="50" height="50"/>
-        <image name="first" width="30" height="30"/>
+        <image name="event-tabbar" width="30" height="30"/>
         <image name="iconEventosTec" width="512" height="512"/>
         <image name="location" width="50" height="50"/>
         <image name="logoEventosTec-final" width="630" height="69"/>
         <image name="person" width="24" height="24"/>
+        <image name="star-tabbar" width="30" height="30"/>
         <image name="time" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Lbx-to-XFV"/>
+        <segue reference="YM7-RO-kFv"/>
     </inferredMetricsTieBreakers>
 </document>
