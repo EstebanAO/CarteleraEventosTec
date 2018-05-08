@@ -10,7 +10,7 @@ import UIKit
 
 func makeDate(year: Int, month: Int, day: Int, hr: Int, min: Int, sec: Int) -> Date {
     var calendar = Calendar(identifier: .gregorian)
-    calendar.timeZone = TimeZone(secondsFromGMT: -5)!
+    //calendar.timeZone = TimeZone(secondsFromGMT: -5*3600)!
     let components = DateComponents(year: year, month: month, day: day, hour: hr, minute: min, second: sec)
     return calendar.date(from: components)!
 }
@@ -46,7 +46,7 @@ class Evento{
     init( ide: String, fotoURL: String? = "", name: String? = "", startDate: String? = "",  location: String? = "", contactEmail: String? = "", description: String? = "", requirements: String? = "", schedule: String? = "", petFriendly: Int? = 0, contactPhone: String? = "", category: String? = "", contactName: String? = "", cost: String? = "", hasRegistration: String? = "", cancelled: String? = "", hasDeadline: String? = "", prefix: String? = "", registrationDeadline: String? = "", registrationUrl: String? = "", cancelMessage: String? = "",campus: String? = "", registrationMessage: String? = "")
     {
         self.id = Int(ide)!
-        self.startTime = "15:30"
+        
         let url = URL(string: fotoURL!)
         let imgData = try? Data(contentsOf: url!)
         if(imgData != nil)
@@ -57,7 +57,7 @@ class Evento{
         let arrDateTime = startDate?.components(separatedBy: "T")
         let arrDate = arrDateTime![0].components(separatedBy: "-")
         let arrHour = arrDateTime![1].components(separatedBy: ":")
-
+        self.startTime = arrHour[0] + ":" + arrHour[1]
         let year = Int(arrDate[0])
         let month = Int(arrDate[1])
         let day = Int(arrDate[2])
@@ -148,7 +148,5 @@ class Evento{
         {
             self.registrationMessage = registrationMessage!
         }
-        
-        
     }
 }

@@ -15,6 +15,7 @@ protocol protocoloModificarFavorito{
     func modificaFavorito(fav: Bool, ide: Int )
 }
 
+//Agrega atributos de User Experience
 extension UIView {
     func createGradientLayer() {
         let colorTop =  UIColor.red.cgColor
@@ -44,7 +45,6 @@ extension UIView {
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
 }
-
 
 class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
@@ -90,7 +90,11 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         foto.image = eveTemp.foto
         lbName.text = eveTemp.name
         lbLugar.text = eveTemp.location
-        lbFecha.text = String(describing: eveTemp.startDate)
+        let dateFormatter = DateFormatter()
+        let format = DateFormatter.dateFormat(
+            fromTemplate: "dMMMMYYYY", options:0, locale:NSLocale(localeIdentifier: "es_ES") as Locale)
+        dateFormatter.dateFormat = format
+        lbFecha.text = dateFormatter.string(from: eveTemp.startDate);
         lbHora.text = eveTemp.startTime
         
         lbContactName.text = eveTemp.contactName
@@ -173,6 +177,9 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: - Modifica evento favorito
+    
     @IBAction func modificaFavButton(_ sender: Any) {
         if (eveTemp.favorites)
         {
@@ -188,18 +195,13 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         }        
     }
     
+    //MARK: - IOS Calendar
+    
     @IBAction func guardarEventoIOS(_ sender: Any) {
-        let calendar = Calendar.current
-        
-        
-        //addEventToCalendar(title: eveTemp.name!, description: "Evento Cool", startDate: eveTemp.startDate, endDate: endDate!)
-        
         let eventStore = EKEventStore()
         
         eventStore.requestAccess(to: .event, completion: { (granted, error) in
             if (granted) && (error == nil) {
-                let stDate = self.eveTemp.startDate
-                //let endDate = calendar.date(byAdding: .minute, value: 60, to: stDate)
                 let event = EKEvent(eventStore: eventStore)
                 event.title = self.eveTemp.name
                 event.startDate = self.eveTemp.startDate
@@ -249,7 +251,7 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         })
     }
     
-    // MARK - Google Calendar
+    //MARK: - Google Calendar
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
               withError error: Error!) {
         if let error = error {
@@ -309,10 +311,14 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         GIDSignIn.sharedInstance().signIn()
     }
     
+    //MARK: - Compartir en aplicaciones
+    
     @IBAction func shareNative(_ sender: Any) {
         let activityVC = UIActivityViewController(activityItems: [self.eveTemp.foto as Any], applicationActivities: nil)
         self.present(activityVC, animated: true, completion: nil)
     }
+    
+    //MARK: - Menú calendarios
     
     @IBAction func btCalendarsMenu(_ sender: Any) {
         // 1
