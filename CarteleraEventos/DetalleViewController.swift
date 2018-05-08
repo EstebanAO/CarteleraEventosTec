@@ -138,7 +138,7 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         btCalendarioView.layer.cornerRadius = 5
         btCalendarioView.clipsToBounds = true
         
-        if eveTemp.petFriendly == 1 {
+        if eveTemp.petFriendly == 0 {
             imgPetFriendly.image = nil
             lbPetFriendly.isHidden = true
         }
@@ -267,7 +267,7 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         }
     }
 
-    @IBAction func guardarGoogle(_ sender: UIButton) {
+    @IBAction func guardarGoogle(_ sender: UIButton?) {
         if GIDSignIn.sharedInstance().hasAuthInKeychain() {
             let newEvent: GTLRCalendar_Event = GTLRCalendar_Event()
             
@@ -298,13 +298,14 @@ class DetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
             self.present(alertController, animated: true, completion: nil)
         } else {
-            let alertController = UIAlertController(title: "Cuenta de Google", message:
-                "No se ha iniciado sesión con Google", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Error", message:
+                "No se ha podido guardar el evento ya que no se ha iniciado sesión con Google. Inicie sesión y vuelva a intentar.", preferredStyle: UIAlertControllerStyle.alert)
            alertController.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.default,handler: nil))
             alertController.addAction(UIAlertAction(title: "Iniciar sesión", style: UIAlertActionStyle.default,handler: {_ in self.btnSignInPressed()}))
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    
     
     func btnSignInPressed() {
         GIDSignIn.sharedInstance().signIn()
