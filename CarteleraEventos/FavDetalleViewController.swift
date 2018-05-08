@@ -124,6 +124,8 @@ class FavDetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
         }
     }
     
+    //MARK: - IOS Calendar
+
     @IBAction func guardarEventoIOS(_ sender: Any) {
         let calendar = Calendar.current
         
@@ -241,10 +243,14 @@ class FavDetalleViewController: UIViewController, GIDSignInDelegate, GIDSignInUI
         GIDSignIn.sharedInstance().signIn()
     }
     
+    //MARK: - Compartir en aplicaciones
+    
     @IBAction func shareNative(_ sender: Any) {
         let activityVC = UIActivityViewController(activityItems: [self.eveTemp.foto as Any], applicationActivities: nil)
         self.present(activityVC, animated: true, completion: nil)
     }
+    
+    //MARK: - Menú calendarios
     
     @IBAction func btCalendarsMenu(_ sender: Any) {
         // 1

@@ -13,6 +13,8 @@ class EventoFavoritoViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         buscaFavoritos()
+        
+        //Agrega a favoritos los eventos que ya lo sean.
         for eve in GlobalVar.arrEventsGlobal
         {
             if (arrIndFav.contains(eve.id))
@@ -28,6 +30,7 @@ class EventoFavoritoViewController: UIViewController, UITableViewDelegate, UITab
         // Dispose of any resources that can be recreated.
     }
     
+    //Agrega o elimina los favoritos de la base de datos.
     func modificaFavorito(fav: Bool, ide: Int) {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -68,6 +71,7 @@ class EventoFavoritoViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     
+    //Busca el id de los eventos favoritos dentro de la base de datos y lo guarda en el arreglo arrIndFav
     var arrIndFav = [Int]()
     func buscaFavoritos()
     {
@@ -100,19 +104,20 @@ class EventoFavoritoViewController: UIViewController, UITableViewDelegate, UITab
     var indSelected = 0
     
 
-    
+    //Una sección es utilizada por el título de la aplicación y la otra para desplegar los eventos.
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 2
     }
     
     var arrEventosFav = [Evento]()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        //Sección del nombre
         if (section == 0)
         {
             return 1
         }
+        //Sección de los eventos
         for fav in arrEventos
         {
             if (arrIndFav.contains(fav.id))
@@ -124,11 +129,14 @@ class EventoFavoritoViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //Celda del título de la aplicación
         if (indexPath.section == 0)
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellTitle")! as! CustomTableViewCell
             return cell
         }
+        
+        //Celda de los eventos
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as! CustomTableViewCell
         
         cell.name.text = arrEventosFav[indexPath.row].name
